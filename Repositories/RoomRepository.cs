@@ -107,4 +107,11 @@ public class RoomRepository : IRoomRepository
             throw;
         }
     }
+    
+    public async Task<List<Room>> GetAvailableRoomsAsync(DateTime start, DateTime end)
+    {
+        return await _context.Rooms
+            .Where(room => !room.Bookings.Any(b => b.StartDate < end && b.EndDate > start)
+            ).ToListAsync();
+    }
 }
