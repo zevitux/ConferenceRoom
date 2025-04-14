@@ -84,6 +84,10 @@
             "Serilog.Sinks.File": {
               "target": "Package",
               "version": "[7.0.0-dev-02301, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.8.0, )"
             }
           },
           "imports": [

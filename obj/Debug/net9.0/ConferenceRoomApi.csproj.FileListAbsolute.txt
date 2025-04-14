@@ -162,3 +162,7 @@ C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\obj\Debug\net9.0\refint\Conferen
 C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\obj\Debug\net9.0\ConferenceRoomApi.pdb
 C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\obj\Debug\net9.0\ConferenceRoomApi.genruntimeconfig.cache
 C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\obj\Debug\net9.0\ref\ConferenceRoomApi.dll
+C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\bin\Debug\net9.0\Serilog.dll
+C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\bin\Debug\net9.0\Serilog.Sinks.Console.dll
+C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\bin\Debug\net9.0\Serilog.Sinks.File.dll
+C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\obj\Debug\net9.0\ConferenceRoomApi.sourcelink.json

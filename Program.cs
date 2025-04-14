@@ -1,4 +1,7 @@
 using ConferenceRoomApi.Data;
+using ConferenceRoomApi.Repositories;
+using ConferenceRoomApi.Services;
+using ConferenceRoomApi.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 
@@ -10,6 +13,12 @@ builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IRoomService, RoomService>();
+builder.Services.AddScoped<IRoomRepository, RoomRepository>();
+builder.Services.AddScoped<IBookingRepository, BookingRepository>();
+builder.Services.AddScoped<IBookingService, BookingService>();
 
 var app = builder.Build();
 
