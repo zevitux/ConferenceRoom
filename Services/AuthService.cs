@@ -81,17 +81,17 @@ public class AuthService(
         }
     }
 
-    public async Task<AuthResponseDto> RefreshTokenAsync(string token, string refreshToken)
+    public async Task<AuthResponseDto> RefreshTokenAsync(RefreshTokenDto refreshTokenDto)
     {
         try
         {
-            var principal = GetPrincipalFromExpiredToken(token);
+            var principal = GetPrincipalFromExpiredToken(refreshTokenDto.AccessToken);
             var userId = int.Parse(principal.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
-            var user = await ValidateRefreshToken(userId, refreshToken);
+            var user = await ValidateRefreshToken(userId, refreshTokenDto.RefreshToken);
             if (user == null)
             {
-                logger.LogWarning("Refresh token attempt with invalid refresh token: {RefreshToken}", refreshToken);
+                logger.LogWarning("Refresh token attempt with invalid refresh token: {RefreshToken}", refreshTokenDto.RefreshToken);
                 throw new Exception("Invalid refresh token");
             }
 
@@ -99,7 +99,7 @@ public class AuthService(
         }
         catch (Exception ex)
         {
-            logger.LogError(ex, "Refresh token failed: {RefreshToken}", refreshToken);
+            logger.LogError(ex, "Refresh token failed: {RefreshToken}", refreshTokenDto.RefreshToken);
             throw;
         }
     }

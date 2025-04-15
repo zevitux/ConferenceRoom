@@ -52,7 +52,7 @@ namespace ConferenceRoomApi.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Bookings");
+                    b.ToTable("Bookings", (string)null);
                 });
 
             modelBuilder.Entity("ConferenceRoomApi.Models.Room", b =>
@@ -80,7 +80,7 @@ namespace ConferenceRoomApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Rooms");
+                    b.ToTable("Rooms", (string)null);
                 });
 
             modelBuilder.Entity("ConferenceRoomApi.Models.User", b =>
@@ -117,7 +117,7 @@ namespace ConferenceRoomApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("ConferenceRoomApi.Models.Booking", b =>

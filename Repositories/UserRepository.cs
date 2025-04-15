@@ -89,31 +89,4 @@ public class UserRepository : IUserRepository
             throw;
         }
     }
-
-    public async Task<bool> DeleteAsync(int id)
-    {
-        await using var transaction = await _context.Database.BeginTransactionAsync();
-        try
-        {
-            var user = await _context.Users
-                .Include(u => u.Bookings)
-                .FirstOrDefaultAsync(u => u.Id == id);
-
-            if (user == null) return false;
-
-            if (user.Bookings?.Any() == true)
-                _context.Bookings.RemoveRange(user.Bookings);
-
-            _context.Users.Remove(user);
-            await _context.SaveChangesAsync();
-            await transaction.CommitAsync();
-            return true;
-        }
-        catch (Exception)
-        {
-            await transaction.RollbackAsync();
-            _logger.LogError("Error deleting user with ID: {Id}", id);
-            throw;
-        }
-    }
 }

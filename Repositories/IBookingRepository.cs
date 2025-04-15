@@ -1,3 +1,4 @@
+using ConferenceRoomApi.DTOs.Bookings;
 using ConferenceRoomApi.Models;
 
 namespace ConferenceRoomApi.Repositories;
@@ -5,6 +6,7 @@ namespace ConferenceRoomApi.Repositories;
 public interface IBookingRepository
 {
     Task<Booking> CreateBookingAsync(Booking booking);
+    Task<List<Booking>> GetAllBookingsAsync();
     Task CancelBookingAsync(int bookingId);
     Task<bool> ExistsConflictAsync(int roomId, DateTime start, DateTime end);
     Task<Booking?> GetBookingByIdAsync(int bookingId);

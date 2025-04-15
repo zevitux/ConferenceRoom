@@ -29,6 +29,18 @@ public class BookingRepository : IBookingRepository
             throw;
         }
     }
+    public async Task<List<Booking>> GetAllBookingsAsync()
+    {
+        try
+        {
+            return await _context.Bookings.ToListAsync();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error getting all bookings");
+            throw;
+        }
+    }
 
     public async Task CancelBookingAsync(int bookingId)
     {
