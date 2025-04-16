@@ -15,7 +15,7 @@ public class User
     [Required]
     public string Role { get; set; } //Admin and user
 
-    public string RefreshToken { get; set; }
+    public string RefreshToken { get; set; } = string.Empty;
     public DateTime RefreshTokenExpiryTime { get; set; }
     public List<Booking> Bookings { get; set; } = new();
 }

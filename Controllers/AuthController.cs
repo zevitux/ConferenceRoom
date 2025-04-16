@@ -1,7 +1,5 @@
-﻿using System.Security.Cryptography;
-using ConferenceRoomApi.DTOs.Auth;
+﻿using ConferenceRoomApi.DTOs.Auth;
 using ConferenceRoomApi.Services.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ConferenceRoomApi.Controllers

@@ -32,10 +32,12 @@ public class AuthService(
             {
                 Email = registerDto.Email,
                 Name = registerDto.Name,
-                Role = "User"
+                Role = registerDto.Role
             };
 
             newUser.PasswordHash = new PasswordHasher<User>().HashPassword(newUser, registerDto.Password);
+            newUser.RefreshToken = GenerateRefreshToken();
+            newUser.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
 
             var createdUser = await userRepository.AddAsync(newUser);
             logger.LogInformation("Registration successful: {Email}", registerDto.Email);

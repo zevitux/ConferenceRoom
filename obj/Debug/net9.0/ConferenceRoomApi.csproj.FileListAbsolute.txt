@@ -166,4 +166,11 @@ C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\bin\Debug\net9.0\Serilog.dll
 C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\bin\Debug\net9.0\Serilog.Sinks.Console.dll
 C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\bin\Debug\net9.0\Serilog.Sinks.File.dll
 C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\obj\Debug\net9.0\ConferenceRoomApi.sourcelink.json
+C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\bin\Debug\net9.0\Serilog.AspNetCore.dll
+C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\bin\Debug\net9.0\Serilog.Extensions.Hosting.dll
+C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\bin\Debug\net9.0\Serilog.Extensions.Logging.dll
+C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\bin\Debug\net9.0\Serilog.Formatting.Compact.dll
+C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\bin\Debug\net9.0\Serilog.Settings.Configuration.dll
+C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\bin\Debug\net9.0\Serilog.Sinks.Debug.dll
 C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
