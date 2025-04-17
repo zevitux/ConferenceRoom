@@ -16,13 +16,15 @@ public class BookingService : IBookingService
         _bookingRepository = bookingRepository;
         _logger = logger;
     }
+
+    //Retrives all bookings as DTOs
     public async Task<List<BookingResponseDto>> GetAllBookingsAsync()
     {
         try
         {
             var bookings = await _bookingRepository.GetAllBookingsAsync();
 
-            var bookingResponseDtos = bookings.Select(booking => new BookingResponseDto
+            var bookingResponseDtos = bookings.Select(booking => new BookingResponseDto //Map entities to responde DTOs
             {
                 Id = booking.Id,
                 RoomId = booking.RoomId,
@@ -40,6 +42,7 @@ public class BookingService : IBookingService
         }
     }
 
+    //Creates a booking and returns the created booking as a DTO
     public async Task<BookingResponseDto> CreateBookingAsync(BookingCreateDto bookingDto)
     {
         try
@@ -70,6 +73,7 @@ public class BookingService : IBookingService
         }
     }
 
+    //Cancels a booking withing a transaction scope
     public async Task<bool> CancelBookingAsync(int bookingId)
     {
         using var transaction = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
@@ -86,6 +90,7 @@ public class BookingService : IBookingService
         }
     }
 
+    //Checks if a booking conflict exists
     public Task<bool> ExistsConflictAsync(int roomId, DateTime start, DateTime end)
     {
         try
@@ -99,6 +104,7 @@ public class BookingService : IBookingService
         }
     }
 
+    //Retrieves a booking by ID
     public async Task<BookingResponseDto?> GetBookingByIdAsync(int bookingId)
     {
         try
@@ -122,6 +128,7 @@ public class BookingService : IBookingService
         }
     }
 
+    //Retrieve all bookings by user ID
     public async Task<List<BookingResponseDto>> GetBookingsByUserIdAsync(int userId)
     {
         try

@@ -10,7 +10,7 @@ public class RoomService : IRoomService
     private readonly IRoomRepository _roomRepository;
     private readonly IBookingRepository _bookingRepository;
     private readonly ILogger<RoomService> _logger;
-    private static readonly List<string> _allowedEquipament = new() { "Projector", "Whiteboard", "VideoConference" };
+    private static readonly List<string> _allowedEquipment = new() { "Projector", "Whiteboard", "VideoConference" }; //...
 
     public RoomService(
         IRoomRepository roomRepository, 
@@ -22,7 +22,8 @@ public class RoomService : IRoomService
         _bookingRepository = bookingRepository;
         _logger = logger;
     }
-    
+
+    //Get all rooms
     public async Task<List<RoomResponseDto>> GetAllRoomAsync()
     {
         try
@@ -43,6 +44,7 @@ public class RoomService : IRoomService
         }
     }
 
+    //Get room by ID
     public async Task<RoomResponseDto?> GetRoomByIdAsync(int id)
     {
         try
@@ -65,11 +67,12 @@ public class RoomService : IRoomService
         }
     }
 
+    //Get available rooms and return them as DTOs
     public async Task<List<RoomResponseDto?>> GetAvailableRoomsAsync(DateTime start, DateTime end)
     {
         try
         {
-            ValidateTimeRange(start, end);
+            ValidateTimeRange(start, end); 
 
             var availableRooms = await _roomRepository.GetAvailableRoomsAsync(start, end);
 
@@ -88,6 +91,7 @@ public class RoomService : IRoomService
         }
     }
 
+    //Create a new room and return it as a DTO
     public async Task<RoomResponseDto> CreateRoomAsync(RoomCreateDto dto)
     {
         try
@@ -118,6 +122,7 @@ public class RoomService : IRoomService
         }
     }
 
+    //Update room and return it as a DTO
     public async Task<RoomResponseDto> UpdateRoomAsync(int id, RoomUpdateDto dto)
     {
         try
@@ -158,6 +163,7 @@ public class RoomService : IRoomService
         }
     }
 
+    //Delete room by ID
     public async Task<bool> DeleteRoomAsync(int id)
     {
         try
@@ -179,17 +185,20 @@ public class RoomService : IRoomService
     }
 
     #region Validation Helpers
+    //Validates the time range for bookings
     private void ValidateTimeRange(DateTime start, DateTime end)
     {
         if(start > end) throw new ArgumentException("Start date cannot be greater than end date");
         if(start < DateTime.UtcNow.AddMinutes(-5)) throw new ArgumentException("Start date cannot be in the past");
     }
+    //Validates the equipment list
     private void ValidateEquipament(List<string> equipament)
     {
-        var invalid = equipament?.Except(_allowedEquipament).ToList();
+        var invalid = equipament?.Except(_allowedEquipment).ToList();
         if(invalid?.Any() == true ) 
             throw new ArgumentException($"Invalid equipament: {string.Join(", ", invalid)}");
     }
+    //Validates the capacity change
     private async Task ValidateCapacityChange(int roomId, int newCapacity)
     {
         if (newCapacity < 0) throw new ArgumentException("Capacity cannot be negative");

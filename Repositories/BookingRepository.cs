@@ -33,7 +33,7 @@ public class BookingRepository : IBookingRepository
     {
         try
         {
-            return await _context.Bookings.ToListAsync();
+            return await _context.Bookings.ToListAsync(); //Return all bookings
         }
         catch (Exception ex)
         {
@@ -46,7 +46,7 @@ public class BookingRepository : IBookingRepository
     {
         try
         {
-            var booking = await _context.Bookings.FindAsync(bookingId);
+            var booking = await _context.Bookings.FindAsync(bookingId); //Find booking by ID
             if (booking == null)
             {
                 _logger.LogWarning("Booking {BookingId} was not found", bookingId);
@@ -70,7 +70,7 @@ public class BookingRepository : IBookingRepository
         {
             return await _context.Bookings.AnyAsync(b =>
                 b.RoomId == roomId &&
-                (start < b.EndDate && end > b.StartDate));
+                (start < b.EndDate && end > b.StartDate)); //Check for conflicts
         }
         catch (Exception ex)
         {
@@ -83,7 +83,7 @@ public class BookingRepository : IBookingRepository
     {
         try
         {
-            return await _context.Bookings.FirstOrDefaultAsync(b => b.Id == bookingId);
+            return await _context.Bookings.FirstOrDefaultAsync(b => b.Id == bookingId); //Get booking by ID
         }
         catch (Exception ex)
         {
@@ -98,7 +98,7 @@ public class BookingRepository : IBookingRepository
         {
             return await _context.Bookings
                 .Where(b => b.UserId == userId)
-                .ToListAsync();
+                .ToListAsync(); //All bookings for a user
         }
         catch (Exception ex)
         {
@@ -112,6 +112,6 @@ public class BookingRepository : IBookingRepository
         return await _context.Bookings
             .AnyAsync(b =>
                 b.RoomId == roomId && 
-                b.StartDate >= referenceTime);
+                b.StartDate >= referenceTime); //Check for future bookings
     }
 }

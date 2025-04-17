@@ -19,7 +19,7 @@ public class RoomRepository : IRoomRepository
     {
         try
         {
-            return await _context.Rooms.ToListAsync();
+            return await _context.Rooms.ToListAsync(); //All rooms
         }
         catch (Exception)
         {
@@ -32,7 +32,7 @@ public class RoomRepository : IRoomRepository
     {
         try
         {
-            return await _context.Rooms.FirstOrDefaultAsync(r => r.Id == id);
+            return await _context.Rooms.FirstOrDefaultAsync(r => r.Id == id); //Find room by ID
         }
         catch (Exception)
         {
@@ -47,7 +47,7 @@ public class RoomRepository : IRoomRepository
         {
             _context.Rooms.Add(room);
             await _context.SaveChangesAsync();
-            _context.Entry(room).State = EntityState.Detached;
+            _context.Entry(room).State = EntityState.Detached; //Detach for tracking safety
             return room;
         }
         catch (Exception)
@@ -62,20 +62,20 @@ public class RoomRepository : IRoomRepository
         await using var transaction = await _context.Database.BeginTransactionAsync();
         try
         {
-            var existingRoom = await _context.Rooms.FindAsync(room.Id);
+            var existingRoom = await _context.Rooms.FindAsync(room.Id); //Find room by ID
             if (existingRoom == null)
                 throw new KeyNotFoundException("Room doesn't exist");
 
-            _context.Entry(existingRoom).CurrentValues.SetValues(room);
+            _context.Entry(existingRoom).CurrentValues.SetValues(room); //Update room values
             await _context.SaveChangesAsync();
             await transaction.CommitAsync();
 
-            _context.Entry(room).State = EntityState.Detached;
+            _context.Entry(room).State = EntityState.Detached; //Detach entity
             return existingRoom;
         }
         catch (Exception)
         {
-            await transaction.RollbackAsync();
+            await transaction.RollbackAsync(); //Roolback
             _logger.LogError("Error updating room with ID: {RoomId}", room.Id);
             throw;
         }
@@ -88,11 +88,12 @@ public class RoomRepository : IRoomRepository
         {
             var room = await _context.Rooms
                 .Include(r => r.Bookings)
-                .FirstOrDefaultAsync(u => u.Id == id);
+                .FirstOrDefaultAsync(u => u.Id == id); //Fetch room and related bookings
 
-            if (room == null) return false;
+            if (room == null)
+                return false;
             
-            if(room.Bookings?.Any() == true)
+            if(room.Bookings?.Any() == true) //Delete related room if any
                 _context.Bookings.RemoveRange(room.Bookings);
             
             _context.Rooms.Remove(room);
@@ -102,7 +103,7 @@ public class RoomRepository : IRoomRepository
         }
         catch (Exception)
         {
-            await transaction.RollbackAsync();
+            await transaction.RollbackAsync(); //Rollback
             _logger.LogError("Error deleting room with ID: {RoomId}", id);
             throw;
         }
@@ -112,6 +113,6 @@ public class RoomRepository : IRoomRepository
     {
         return await _context.Rooms
             .Where(room => !room.Bookings.Any(b => b.StartDate < end && b.EndDate > start)
-            ).ToListAsync();
+            ).ToListAsync(); //Get rooms without conflicting bookings
     }
 }

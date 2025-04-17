@@ -19,7 +19,7 @@ public class UserRepository : IUserRepository
     {
         try
         {
-            return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+            return await _context.Users.FirstOrDefaultAsync(u => u.Email == email); //Query for user with matching email
         }
         catch (Exception)
         {
@@ -32,7 +32,7 @@ public class UserRepository : IUserRepository
     {
         try
         {
-            return _context.Users.FirstOrDefaultAsync(u => u.Id == id)!;
+            return _context.Users.FirstOrDefaultAsync(u => u.Id == id)!; //Fetch for user by PK
         }
         catch (Exception)
         {
@@ -46,7 +46,7 @@ public class UserRepository : IUserRepository
     {
         try
         {
-            return _context.Users.ToListAsync();
+            return _context.Users.ToListAsync(); //Retrive all users
         }
         catch (Exception)
         {

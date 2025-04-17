@@ -17,18 +17,20 @@ public class AuthService(
     IConfiguration configuration)
     : IAuthService
 {
+
+    //Register a new user
     public async Task<AuthResponseDto> RegisterAsync(RegisterDto registerDto)
     {
         try
         {
-            var existingUser = await userRepository.GetUserByEmailAsync(registerDto.Email);
+            var existingUser = await userRepository.GetUserByEmailAsync(registerDto.Email); //Check if user already exists
             if (existingUser != null)
             {
                 logger.LogWarning("Registration attempt with existing email: {Email}", registerDto.Email);
                 throw new Exception("Email already exists");
             }
 
-            var newUser = new User
+            var newUser = new User //New user and hash the password
             {
                 Email = registerDto.Email,
                 Name = registerDto.Name,
@@ -51,6 +53,7 @@ public class AuthService(
         }
     }
 
+    //Login and generate tokens
     public async Task<AuthResponseDto> LoginAsync(LoginDto loginDto)
     {
         try
@@ -64,7 +67,7 @@ public class AuthService(
                 throw new Exception("Invalid credentials");
             }
 
-            var passwordHasher = new PasswordHasher<User>();
+            var passwordHasher = new PasswordHasher<User>(); //Verifing the password
             var passwordVerificationResult = passwordHasher.VerifyHashedPassword(user, user.PasswordHash, loginDto.Password);
 
             if (passwordVerificationResult == PasswordVerificationResult.Failed)
@@ -83,6 +86,7 @@ public class AuthService(
         }
     }
 
+    //Refresh expired acces token using valid refresh token
     public async Task<AuthResponseDto> RefreshTokenAsync(RefreshTokenDto refreshTokenDto)
     {
         try
@@ -106,6 +110,7 @@ public class AuthService(
         }
     }
 
+    //Validate the expired token and returns claims principal
     private ClaimsPrincipal GetPrincipalFromExpiredToken(string token)
     {
         var tokenValidatorParameters = new TokenValidationParameters
@@ -122,6 +127,7 @@ public class AuthService(
         return tokenHandler.ValidateToken(token, tokenValidatorParameters, out _);
     }
 
+    //Verifies if refresh token is still valid
     private async Task<User?> ValidateRefreshToken(int userId, string refreshToken)
     {
         var user = await userRepository.GetUserById(userId);
@@ -132,6 +138,7 @@ public class AuthService(
         return user;
     }
 
+    //Generates new access and refresh tokens
     private async Task<AuthResponseDto> GenerateTokens(User user)
     {
         var accessToken = GenerateJwtToken(user);
@@ -150,6 +157,7 @@ public class AuthService(
         };
     }
 
+    //Create JWT token with claims
     private string GenerateJwtToken(User user)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
@@ -175,6 +183,7 @@ public class AuthService(
         return tokenHandler.WriteToken(token);
     }
 
+    //Generate a secure refresh token
     private static string GenerateRefreshToken()
     {
         var randomNumber = new byte[64];
