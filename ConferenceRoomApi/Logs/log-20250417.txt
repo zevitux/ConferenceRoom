@@ -1,0 +1,37 @@
+2025-04-17 17:05:17.905 -03:00 [ERR] Error creating room
+System.ArgumentException: Invalid equipament: Lousa, Caneta, Cadeiras, Mesas, Projetor
+   at ConferenceRoomApi.Services.RoomService.ValidateEquipament(List`1 equipament) in C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\Services\RoomService.cs:line 199
+   at ConferenceRoomApi.Services.RoomService.CreateRoomAsync(RoomCreateDto dto) in C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\Services\RoomService.cs:line 99
+2025-04-17 17:05:17.992 -03:00 [ERR] Error creating room
+System.ArgumentException: Invalid equipament: Lousa, Caneta, Cadeiras, Mesas, Projetor
+   at ConferenceRoomApi.Services.RoomService.ValidateEquipament(List`1 equipament) in C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\Services\RoomService.cs:line 199
+   at ConferenceRoomApi.Services.RoomService.CreateRoomAsync(RoomCreateDto dto) in C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\Services\RoomService.cs:line 99
+   at ConferenceRoomApi.Controllers.RoomController.CreateRoom(RoomCreateDto roomDto) in C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\Controllers\RoomController.cs:line 77
+2025-04-17 17:05:20.237 -03:00 [ERR] Error creating room
+System.ArgumentException: Invalid equipament: Lousa, Caneta, Cadeiras, Mesas, Projetor
+   at ConferenceRoomApi.Services.RoomService.ValidateEquipament(List`1 equipament) in C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\Services\RoomService.cs:line 199
+   at ConferenceRoomApi.Services.RoomService.CreateRoomAsync(RoomCreateDto dto) in C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\Services\RoomService.cs:line 99
+2025-04-17 17:05:20.272 -03:00 [ERR] Error creating room
+System.ArgumentException: Invalid equipament: Lousa, Caneta, Cadeiras, Mesas, Projetor
+   at ConferenceRoomApi.Services.RoomService.ValidateEquipament(List`1 equipament) in C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\Services\RoomService.cs:line 199
+   at ConferenceRoomApi.Services.RoomService.CreateRoomAsync(RoomCreateDto dto) in C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\Services\RoomService.cs:line 99
+   at ConferenceRoomApi.Controllers.RoomController.CreateRoom(RoomCreateDto roomDto) in C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\Controllers\RoomController.cs:line 77
+2025-04-17 17:05:20.837 -03:00 [ERR] Error creating room
+System.ArgumentException: Invalid equipament: Lousa, Caneta, Cadeiras, Mesas, Projetor
+   at ConferenceRoomApi.Services.RoomService.ValidateEquipament(List`1 equipament) in C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\Services\RoomService.cs:line 199
+   at ConferenceRoomApi.Services.RoomService.CreateRoomAsync(RoomCreateDto dto) in C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\Services\RoomService.cs:line 99
+2025-04-17 17:05:20.890 -03:00 [ERR] Error creating room
+System.ArgumentException: Invalid equipament: Lousa, Caneta, Cadeiras, Mesas, Projetor
+   at ConferenceRoomApi.Services.RoomService.ValidateEquipament(List`1 equipament) in C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\Services\RoomService.cs:line 199
+   at ConferenceRoomApi.Services.RoomService.CreateRoomAsync(RoomCreateDto dto) in C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\Services\RoomService.cs:line 99
+   at ConferenceRoomApi.Controllers.RoomController.CreateRoom(RoomCreateDto roomDto) in C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\Controllers\RoomController.cs:line 77
+2025-04-17 17:05:21.286 -03:00 [ERR] Error creating room
+System.ArgumentException: Invalid equipament: Lousa, Caneta, Cadeiras, Mesas, Projetor
+   at ConferenceRoomApi.Services.RoomService.ValidateEquipament(List`1 equipament) in C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\Services\RoomService.cs:line 199
+   at ConferenceRoomApi.Services.RoomService.CreateRoomAsync(RoomCreateDto dto) in C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\Services\RoomService.cs:line 99
+2025-04-17 17:05:21.322 -03:00 [ERR] Error creating room
+System.ArgumentException: Invalid equipament: Lousa, Caneta, Cadeiras, Mesas, Projetor
+   at ConferenceRoomApi.Services.RoomService.ValidateEquipament(List`1 equipament) in C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\Services\RoomService.cs:line 199
+   at ConferenceRoomApi.Services.RoomService.CreateRoomAsync(RoomCreateDto dto) in C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\Services\RoomService.cs:line 99
+   at ConferenceRoomApi.Controllers.RoomController.CreateRoom(RoomCreateDto roomDto) in C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\Controllers\RoomController.cs:line 77
+2025-04-17 17:42:54.630 -03:00 [INF] Registration successful: rebeca@gmail.com
