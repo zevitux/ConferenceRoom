@@ -30,7 +30,7 @@ A project designed to help manage meeting room availability, reservations, and s
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/zevitux/conference-room.git
+   git clone https://github.com/zevitux/ConferenceRoom.git
    ```
 
 2. Navigate to the project directory:
