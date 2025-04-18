@@ -17,5 +17,6 @@ public class RegisterDto
     public string Password { get; set; }
     
     [Required]
+    [RegularExpression(@"^(Admin|User)$", ErrorMessage = "Role must be either 'Admin' or 'User'.")]
     public string Role { get; set; } // Admin and user
 }

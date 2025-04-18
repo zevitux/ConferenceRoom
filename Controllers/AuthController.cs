@@ -66,7 +66,7 @@ namespace ConferenceRoomApi.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error during token refresh");
-                return Unauthorized(new { Message = ex.Message });
+                return Unauthorized(ex.Message);
             }
         }
     }

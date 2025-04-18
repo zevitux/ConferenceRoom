@@ -1,5 +1,5 @@
 ﻿using ConferenceRoomApi.DTOs.Bookings;
-using ConferenceRoomApi.Services;
+using ConferenceRoomApi.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ConferenceRoomApi.Controllers
@@ -8,9 +8,9 @@ namespace ConferenceRoomApi.Controllers
     [ApiController]
     public class BookingController : ControllerBase
     {
-        private readonly BookingService _bookingService;
+        private readonly IBookingService _bookingService;
 
-        public BookingController(BookingService bookingService)
+        public BookingController(IBookingService bookingService)
         {
             _bookingService = bookingService;
         }
@@ -30,7 +30,7 @@ namespace ConferenceRoomApi.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetALlBookings()
+        public async Task<IActionResult> GetAllBookings()
         {
             var bookings = await _bookingService.GetAllBookingsAsync();
             return Ok(bookings);
