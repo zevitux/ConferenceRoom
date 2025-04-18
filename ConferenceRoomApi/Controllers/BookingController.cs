@@ -14,7 +14,7 @@ namespace ConferenceRoomApi.Controllers
         {
             _bookingService = bookingService;
         }
-
+        
         [HttpPost]
         public async Task<IActionResult> CreateBooking([FromBody] BookingCreateDto bookingDto)
         {
