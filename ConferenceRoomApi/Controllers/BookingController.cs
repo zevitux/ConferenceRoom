@@ -40,7 +40,7 @@ namespace ConferenceRoomApi.Controllers
         public async Task<IActionResult> GetBookingById(int id)
         {
             var booking = await _bookingService.GetBookingByIdAsync(id);
-            if(booking == null)
+            if (booking == null)
                 return NotFound("Booking not found");
 
             return Ok(booking);
@@ -50,7 +50,7 @@ namespace ConferenceRoomApi.Controllers
         public async Task<IActionResult> CancelBooking(int id)
         {
             var success = await _bookingService.CancelBookingAsync(id);
-            if(!success)
+            if (!success)
                 return NotFound("Booking not found or already cancelled");
 
             return NoContent();
