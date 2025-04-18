@@ -124,7 +124,7 @@ namespace ConferenceRoomApiTests.ControllersTests
             _mockAuthService
                 .Setup(x => x.RefreshTokenAsync(refreshTokenDto))
                 .ReturnsAsync(response);
-
+            
             // Act
             var result = await _controller.RefreshToken(refreshTokenDto);
 
