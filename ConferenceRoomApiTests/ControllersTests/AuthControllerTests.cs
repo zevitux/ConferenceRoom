@@ -106,7 +106,7 @@ namespace ConferenceRoomApiTests.ControllersTests
         }
 
         [Fact]
-        public async Task RefreshtokenShouldReturnOkWhenTokenIsRefresh()
+        public async Task RefreshTokenShouldReturnOkWhenTokenIsRefresh()
         {
             // Arrange
             var refreshTokenDto = new RefreshTokenDto
