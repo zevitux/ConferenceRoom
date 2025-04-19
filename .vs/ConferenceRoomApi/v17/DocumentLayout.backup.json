@@ -1,0 +1,62 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Projetos\\ConferenceRoomApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{704B6A09-53AE-4129-90A6-F4F04013C7F1}|ConferenceRoomApiTests\\ConferenceRoomApiTests.csproj|c:\\projetos\\conferenceroomapi\\conferenceroomapitests\\controllerstests\\authcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{704B6A09-53AE-4129-90A6-F4F04013C7F1}|ConferenceRoomApiTests\\ConferenceRoomApiTests.csproj|solutionrelative:conferenceroomapitests\\controllerstests\\authcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95BA3E0C-4C91-431A-B56B-8ACF72D0C802}|ConferenceRoomApi\\ConferenceRoomApi.csproj|c:\\projetos\\conferenceroomapi\\conferenceroomapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95BA3E0C-4C91-431A-B56B-8ACF72D0C802}|ConferenceRoomApi\\ConferenceRoomApi.csproj|solutionrelative:conferenceroomapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Projetos\\ConferenceRoomApi\\ConferenceRoomApi\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "ConferenceRoomApi\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Projetos\\ConferenceRoomApi\\ConferenceRoomApi\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "ConferenceRoomApi\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowEYAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T14:14:59.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthControllerTests.cs",
+              "DocumentMoniker": "C:\\Projetos\\ConferenceRoomApi\\ConferenceRoomApiTests\\ControllersTests\\AuthControllerTests.cs",
+              "RelativeDocumentMoniker": "ConferenceRoomApiTests\\ControllersTests\\AuthControllerTests.cs",
+              "ToolTip": "C:\\Projetos\\ConferenceRoomApi\\ConferenceRoomApiTests\\ControllersTests\\AuthControllerTests.cs*",
+              "RelativeToolTip": "ConferenceRoomApiTests\\ControllersTests\\AuthControllerTests.cs*",
+              "ViewState": "AgIAAKoAAAAAAAAAAAAiwK0AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T14:07:55.526Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -68,7 +68,7 @@ public class RoomService : IRoomService
     }
 
     //Get available rooms and return them as DTOs
-    public async Task<List<RoomResponseDto?>> GetAvailableRoomsAsync(DateTime start, DateTime end)
+    public async Task<List<RoomResponseDto>> GetAvailableRoomsAsync(DateTime start, DateTime end)
     {
         try
         {
@@ -82,7 +82,7 @@ public class RoomService : IRoomService
                 Name = room.Name,
                 Capacity = room.Capacity,
                 Equipment = new List<string>(room.Equipment)
-            }).ToList<RoomResponseDto?>();
+            }).ToList<RoomResponseDto>();
         }
         catch (Exception ex)
         {

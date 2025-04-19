@@ -1,4 +1,3 @@
-using ConferenceRoomApi.DTOs.Bookings;
 using ConferenceRoomApi.Models;
 
 namespace ConferenceRoomApi.Repositories;

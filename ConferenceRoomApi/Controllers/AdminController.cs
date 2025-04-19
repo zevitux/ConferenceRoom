@@ -28,6 +28,9 @@ namespace ConferenceRoomApi.Controllers
         public async Task<IActionResult> GetUserById(int id)
         {
             var user = await _userRepository.GetUserById(id);
+            if(user == null)
+                return NotFound("User not found");
+
             return Ok(user);
         }
 

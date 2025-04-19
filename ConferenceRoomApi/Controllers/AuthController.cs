@@ -56,7 +56,10 @@ namespace ConferenceRoomApi.Controllers
         public async Task<IActionResult> RefreshToken(RefreshTokenDto refreshTokenDto)
         {
             if (!ModelState.IsValid)
+            {
+                _logger.LogWarning("Invalid refresh token");
                 return BadRequest(ModelState);
+            }    
 
             try
             {
@@ -65,7 +68,7 @@ namespace ConferenceRoomApi.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error during token refresh");
+                _logger.LogError(ex, "Error during token refresh: {ErrorMessage}", ex.Message);
                 return Unauthorized(ex.Message);
             }
         }

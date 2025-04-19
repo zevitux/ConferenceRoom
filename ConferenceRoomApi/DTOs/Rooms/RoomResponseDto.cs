@@ -1,5 +1,3 @@
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-
 namespace ConferenceRoomApi.DTOs.Rooms;
 
 public class RoomResponseDto

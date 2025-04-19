@@ -50,6 +50,15 @@ namespace ConferenceRoomApiTests.ControllersTests
             var returnedResponse = Assert.IsType<AuthResponseDto>(actionResult.Value);
             Assert.Equal(response.AccessToken, returnedResponse.AccessToken);
             Assert.Equal(response.RefreshToken, returnedResponse.RefreshToken);
+
+            _mockLogger.Verify(
+                x => x.Log(
+                    It.IsAny<LogLevel>(),
+                    It.IsAny<EventId>(),
+                    It.IsAny<It.IsAnyType>(),
+                    It.IsAny<Exception>(),
+                    It.IsAny<Func<It.IsAnyType, Exception?, string>>()),
+                Times.Never);
         }
 
         [Fact]
@@ -72,8 +81,18 @@ namespace ConferenceRoomApiTests.ControllersTests
             var result = await _controller.Register(registerDto);
 
             // Assert
-            var actionResult = Assert.IsType<BadRequestObjectResult>(result);
-            Assert.Equal(4, _controller.ModelState.ErrorCount);
+            var badRequestObjectResult = Assert.IsType<BadRequestObjectResult>(result);
+            var errors = Assert.IsType<SerializableError>(badRequestObjectResult.Value);
+            Assert.Equal(4, errors.Count);
+
+            _mockLogger.Verify(
+                x => x.Log(
+                    It.IsAny<LogLevel>(),
+                    It.IsAny<EventId>(),
+                    It.IsAny<It.IsAnyType>(),
+                    It.IsAny<Exception>(),
+                    It.IsAny<Func<It.IsAnyType, Exception?, string>>()),
+                Times.Never);
         }
 
         [Fact]
@@ -103,6 +122,15 @@ namespace ConferenceRoomApiTests.ControllersTests
             var actionResult = Assert.IsType<OkObjectResult>(result);
             var returnedResponse = Assert.IsType<AuthResponseDto>(actionResult.Value);
             Assert.Equal(response.AccessToken, returnedResponse.AccessToken);
+
+            _mockLogger.Verify(
+                x => x.Log(
+                    It.IsAny<LogLevel>(),
+                    It.IsAny<EventId>(),
+                    It.IsAny<It.IsAnyType>(),
+                    It.IsAny<Exception>(),
+                    It.IsAny<Func<It.IsAnyType, Exception?, string>>()),
+                Times.Never);
         }
 
         [Fact]
@@ -132,6 +160,15 @@ namespace ConferenceRoomApiTests.ControllersTests
             var actionResult = Assert.IsType<OkObjectResult>(result);
             var returnedResponse = Assert.IsType<AuthResponseDto>(actionResult.Value);
             Assert.Equal(response.AccessToken, returnedResponse.AccessToken);
+
+            _mockLogger.Verify(
+                x => x.Log(
+                    It.IsAny<LogLevel>(),
+                    It.IsAny<EventId>(),
+                    It.IsAny<It.IsAnyType>(),
+                    It.IsAny<Exception>(),
+                    It.IsAny<Func<It.IsAnyType, Exception?, string>>()),
+                Times.Never);
         }
 
         [Fact]
@@ -156,6 +193,15 @@ namespace ConferenceRoomApiTests.ControllersTests
             // Assert
             var unauthorizedResult = Assert.IsType<UnauthorizedObjectResult>(result);
             Assert.Equal(expectedErrorMessage, unauthorizedResult.Value);
+
+            _mockLogger.Verify(
+                x => x.Log(
+                    LogLevel.Error,
+                    It.IsAny<EventId>(),
+                    It.Is<It.IsAnyType>((v, t) => v.ToString()!.Contains("Invalid refresh token")),
+                    It.IsAny<Exception>(),
+                    It.IsAny<Func<It.IsAnyType, Exception?, string>>()),
+                Times.Once);
         }
     }
 }

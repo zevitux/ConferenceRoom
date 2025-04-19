@@ -18,7 +18,7 @@ namespace ConferenceRoomApi.Controllers
             _logger = logger;
         }
 
-        [HttpGet("get-all")]
+        [HttpGet("all")]
         public async Task<IActionResult> GetAllRooms()
         {
             try
@@ -36,19 +36,14 @@ namespace ConferenceRoomApi.Controllers
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetRoomById(int id)
         {
-            try
+            var room = await _roomService.GetRoomByIdAsync(id);
+            if (room == null)
             {
-                var room = await _roomService.GetRoomByIdAsync(id);
-                if (room == null)
-                    return NotFound("Room not found");
+                _logger.LogError($"Room with ID {id} not found.");
+                return NotFound($"Room with ID {id} not found.");
+            }
 
-                return Ok(room);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error getting room by ID");
-                return StatusCode(500, "Internal server error");
-            }
+            return Ok(room);
         }
 
         [HttpGet("available")]
@@ -109,8 +104,11 @@ namespace ConferenceRoomApi.Controllers
             {
                 var deleted = await _roomService.DeleteRoomAsync(id);
                 if (!deleted)
-                    return NotFound("Room not found");
-
+                {
+                    _logger.LogError($"Room with ID {id} not found.");
+                    return NotFound($"Room with ID {id} not found.");
+                }
+                    
                 return NoContent();
             }
             catch (Exception ex)

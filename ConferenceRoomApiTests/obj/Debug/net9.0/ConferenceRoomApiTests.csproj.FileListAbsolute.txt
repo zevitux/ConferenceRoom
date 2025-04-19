@@ -170,3 +170,4 @@ C:\Projetos\ConferenceRoomApi\ConferenceRoomApiTests\obj\Debug\net9.0\refint\Con
 C:\Projetos\ConferenceRoomApi\ConferenceRoomApiTests\obj\Debug\net9.0\ConferenceRoomApiTests.pdb
 C:\Projetos\ConferenceRoomApi\ConferenceRoomApiTests\obj\Debug\net9.0\ConferenceRoomApiTests.genruntimeconfig.cache
 C:\Projetos\ConferenceRoomApi\ConferenceRoomApiTests\obj\Debug\net9.0\ref\ConferenceRoomApiTests.dll
+C:\Projetos\ConferenceRoomApi\ConferenceRoomApiTests\obj\Debug\net9.0\ConferenceRoomApiTests.sourcelink.json
