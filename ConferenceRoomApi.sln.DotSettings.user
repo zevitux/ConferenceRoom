@@ -1,12 +1,14 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=302f8387_002D9986_002D41ba_002Db6ea_002D1898d57fc24b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="RegisterShouldReturnBadRequestWhenModelStateIsInvalid #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=302f8387_002D9986_002D41ba_002Db6ea_002D1898d57fc24b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="RegisterShouldReturnBadRequestWhenModelStateIsInvalid #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::704B6A09-53AE-4129-90A6-F4F04013C7F1::net9.0::ConferenceRoomApiTests.ControllersTests.AuthControllerTests.RegisterShouldReturnBadRequestWhenModelStateIsInvalid&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::704B6A09-53AE-4129-90A6-F4F04013C7F1::net9.0::ConferenceRoomApiTests.RepositoryTests.UserRepositoryTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=901923a0_002Dc9c5_002D42c0_002D9220_002D2c6cdbfa5bed/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="RegisterShouldReturnBadRequestWhenModelStateIsInvalid #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=901923a0_002Dc9c5_002D42c0_002D9220_002D2c6cdbfa5bed/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="RegisterShouldReturnBadRequestWhenModelStateIsInvalid #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::704B6A09-53AE-4129-90A6-F4F04013C7F1::net9.0::ConferenceRoomApiTests.ControllersTests.AuthControllerTests.RegisterShouldReturnBadRequestWhenModelStateIsInvalid&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::704B6A09-53AE-4129-90A6-F4F04013C7F1::net9.0::ConferenceRoomApiTests.RepositoryTests.UserRepositoryTests.GetAllUserAsyncShouldReturnAllUserWhenExits&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a200b8dd_002D56a6_002D41b1_002Dbe57_002Db21f56243e9c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="RegisterShouldReturnBadRequestWhenModelStateIsInvalid" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;

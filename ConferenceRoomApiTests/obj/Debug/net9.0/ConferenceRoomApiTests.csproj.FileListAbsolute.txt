@@ -171,3 +171,4 @@ C:\Projetos\ConferenceRoomApi\ConferenceRoomApiTests\obj\Debug\net9.0\Conference
 C:\Projetos\ConferenceRoomApi\ConferenceRoomApiTests\obj\Debug\net9.0\ConferenceRoomApiTests.genruntimeconfig.cache
 C:\Projetos\ConferenceRoomApi\ConferenceRoomApiTests\obj\Debug\net9.0\ref\ConferenceRoomApiTests.dll
 C:\Projetos\ConferenceRoomApi\ConferenceRoomApiTests\obj\Debug\net9.0\ConferenceRoomApiTests.sourcelink.json
+C:\Projetos\ConferenceRoomApi\ConferenceRoomApiTests\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.InMemory.dll
