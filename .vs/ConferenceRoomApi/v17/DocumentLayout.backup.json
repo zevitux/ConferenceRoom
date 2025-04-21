@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Projetos\\ConferenceRoomApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{704B6A09-53AE-4129-90A6-F4F04013C7F1}|ConferenceRoomApiTests\\ConferenceRoomApiTests.csproj|c:\\projetos\\conferenceroomapi\\conferenceroomapitests\\repositorytests\\userrepositorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{704B6A09-53AE-4129-90A6-F4F04013C7F1}|ConferenceRoomApiTests\\ConferenceRoomApiTests.csproj|solutionrelative:conferenceroomapitests\\repositorytests\\userrepositorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{704B6A09-53AE-4129-90A6-F4F04013C7F1}|ConferenceRoomApiTests\\ConferenceRoomApiTests.csproj|c:\\projetos\\conferenceroomapi\\conferenceroomapitests\\repositorytests\\roomrepositorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{704B6A09-53AE-4129-90A6-F4F04013C7F1}|ConferenceRoomApiTests\\ConferenceRoomApiTests.csproj|solutionrelative:conferenceroomapitests\\repositorytests\\roomrepositorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{95BA3E0C-4C91-431A-B56B-8ACF72D0C802}|ConferenceRoomApi\\ConferenceRoomApi.csproj|c:\\projetos\\conferenceroomapi\\conferenceroomapi\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95BA3E0C-4C91-431A-B56B-8ACF72D0C802}|ConferenceRoomApi\\ConferenceRoomApi.csproj|solutionrelative:conferenceroomapi\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{95BA3E0C-4C91-431A-B56B-8ACF72D0C802}|ConferenceRoomApi\\ConferenceRoomApi.csproj|c:\\projetos\\conferenceroomapi\\conferenceroomapi\\repositories\\roomrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95BA3E0C-4C91-431A-B56B-8ACF72D0C802}|ConferenceRoomApi\\ConferenceRoomApi.csproj|solutionrelative:conferenceroomapi\\repositories\\roomrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95BA3E0C-4C91-431A-B56B-8ACF72D0C802}|ConferenceRoomApi\\ConferenceRoomApi.csproj|c:\\projetos\\conferenceroomapi\\conferenceroomapi\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95BA3E0C-4C91-431A-B56B-8ACF72D0C802}|ConferenceRoomApi\\ConferenceRoomApi.csproj|solutionrelative:conferenceroomapi\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,28 +34,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserRepositoryTests.cs",
-              "DocumentMoniker": "C:\\Projetos\\ConferenceRoomApi\\ConferenceRoomApiTests\\RepositoryTests\\UserRepositoryTests.cs",
-              "RelativeDocumentMoniker": "ConferenceRoomApiTests\\RepositoryTests\\UserRepositoryTests.cs",
-              "ToolTip": "C:\\Projetos\\ConferenceRoomApi\\ConferenceRoomApiTests\\RepositoryTests\\UserRepositoryTests.cs*",
-              "RelativeToolTip": "ConferenceRoomApiTests\\RepositoryTests\\UserRepositoryTests.cs*",
-              "ViewState": "AgIAAPoAAAAAAAAAAAAuwAQBAAAmAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "RoomRepository.cs",
+              "DocumentMoniker": "C:\\Projetos\\ConferenceRoomApi\\ConferenceRoomApi\\Repositories\\RoomRepository.cs",
+              "RelativeDocumentMoniker": "ConferenceRoomApi\\Repositories\\RoomRepository.cs",
+              "ToolTip": "C:\\Projetos\\ConferenceRoomApi\\ConferenceRoomApi\\Repositories\\RoomRepository.cs",
+              "RelativeToolTip": "ConferenceRoomApi\\Repositories\\RoomRepository.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAQwGsAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T12:47:07.665Z",
+              "WhenOpened": "2025-04-21T14:37:33.031Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Projetos\\ConferenceRoomApi\\ConferenceRoomApi\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "ConferenceRoomApi\\Repositories\\UserRepository.cs",
-              "ToolTip": "C:\\Projetos\\ConferenceRoomApi\\ConferenceRoomApi\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "ConferenceRoomApi\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAQwEsAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Room.cs",
+              "DocumentMoniker": "C:\\Projetos\\ConferenceRoomApi\\ConferenceRoomApi\\Models\\Room.cs",
+              "RelativeDocumentMoniker": "ConferenceRoomApi\\Models\\Room.cs",
+              "ToolTip": "C:\\Projetos\\ConferenceRoomApi\\ConferenceRoomApi\\Models\\Room.cs",
+              "RelativeToolTip": "ConferenceRoomApi\\Models\\Room.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T11:55:40.271Z",
+              "WhenOpened": "2025-04-21T14:20:43.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RoomRepositoryTests.cs",
+              "DocumentMoniker": "C:\\Projetos\\ConferenceRoomApi\\ConferenceRoomApiTests\\RepositoryTests\\RoomRepositoryTests.cs",
+              "RelativeDocumentMoniker": "ConferenceRoomApiTests\\RepositoryTests\\RoomRepositoryTests.cs",
+              "ToolTip": "C:\\Projetos\\ConferenceRoomApi\\ConferenceRoomApiTests\\RepositoryTests\\RoomRepositoryTests.cs",
+              "RelativeToolTip": "ConferenceRoomApiTests\\RepositoryTests\\RoomRepositoryTests.cs",
+              "ViewState": "AgIAAEEBAAAAAAAAAAAAAEMBAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T14:15:47.844Z",
               "EditorCaption": ""
             }
           ]

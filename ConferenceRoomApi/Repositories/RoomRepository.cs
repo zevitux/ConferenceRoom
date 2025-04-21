@@ -1,6 +1,7 @@
 using ConferenceRoomApi.Data;
 using ConferenceRoomApi.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace ConferenceRoomApi.Repositories;
 
@@ -59,23 +60,32 @@ public class RoomRepository : IRoomRepository
 
     public async Task<Room> UpdateRoomAsync(Room room)
     {
-        await using var transaction = await _context.Database.BeginTransactionAsync();
+        var useTransaction = _context.Database.IsRelational(); //Verify if transaction is needed
+        IDbContextTransaction? transaction = null;
+
         try
         {
-            var existingRoom = await _context.Rooms.FindAsync(room.Id); //Find room by ID
+            if (useTransaction)
+                transaction = await _context.Database.BeginTransactionAsync();
+
+            var existingRoom = await _context.Rooms.FindAsync(room.Id);
             if (existingRoom == null)
                 throw new KeyNotFoundException("Room doesn't exist");
 
-            _context.Entry(existingRoom).CurrentValues.SetValues(room); //Update room values
+            _context.Entry(existingRoom).CurrentValues.SetValues(room);
             await _context.SaveChangesAsync();
-            await transaction.CommitAsync();
 
-            _context.Entry(room).State = EntityState.Detached; //Detach entity
+            if (useTransaction)
+                await transaction!.CommitAsync();
+
+            _context.Entry(room).State = EntityState.Detached;
             return existingRoom;
         }
         catch (Exception)
         {
-            await transaction.RollbackAsync(); //Roolback
+            if (useTransaction && transaction != null)
+                await transaction.RollbackAsync();
+
             _logger.LogError("Error updating room with ID: {RoomId}", room.Id);
             throw;
         }
@@ -83,28 +93,36 @@ public class RoomRepository : IRoomRepository
 
     public async Task<bool> DeleteRoomAsync(int id)
     {
-        await using var transaction = await _context.Database.BeginTransactionAsync();
+        var useTransaction = _context.Database.IsRelational();
+        IDbContextTransaction? transaction = null;
+
         try
         {
-            var room = await _context.Rooms
-                .Include(r => r.Bookings)
-                .FirstOrDefaultAsync(u => u.Id == id); //Fetch room and related bookings
+            if (useTransaction)
+                transaction = await _context.Database.BeginTransactionAsync();
 
+            var room = await _context.Rooms.FindAsync(id);
             if (room == null)
+            {
+                _logger.LogWarning("Room with ID: {RoomId} not found", id);
                 return false;
-            
-            if(room.Bookings?.Any() == true) //Delete related room if any
-                _context.Bookings.RemoveRange(room.Bookings);
-            
+            }
+                
+
             _context.Rooms.Remove(room);
             await _context.SaveChangesAsync();
-            await transaction.CommitAsync();
+
+            if (useTransaction)
+                await transaction!.CommitAsync();
+
             return true;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            await transaction.RollbackAsync(); //Rollback
-            _logger.LogError("Error deleting room with ID: {RoomId}", id);
+            if (useTransaction && transaction != null)
+                await transaction.RollbackAsync();
+
+            _logger.LogError(ex, "Error deleting room with ID: {RoomId}", id);
             throw;
         }
     }
