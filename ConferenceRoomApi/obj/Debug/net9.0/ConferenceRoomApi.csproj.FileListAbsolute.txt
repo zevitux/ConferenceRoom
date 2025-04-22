@@ -173,4 +173,3 @@ C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\bin\Debug\net9.0\Serilog.Extensi
 C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\bin\Debug\net9.0\Serilog.Formatting.Compact.dll
 C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\bin\Debug\net9.0\Serilog.Settings.Configuration.dll
 C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\bin\Debug\net9.0\Serilog.Sinks.Debug.dll
-C:\Projetos\ConferenceRoomApi\ConferenceRoomApi\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

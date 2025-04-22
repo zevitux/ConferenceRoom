@@ -90,10 +90,10 @@ namespace ConferenceRoomApiTests.RepositoryTests
         [Fact]
         public async Task GetRoomByIdAsyncShouldReturnNullWhenNotExists()
         {
-            // Arrange
+            //Arrange
             var options = GetInMemoryDbContextOptions("GetRoomById_NotExists");
 
-            // Act
+            //Act
             Room? result;
             using (var context = new AppDbContext(options))
             {
@@ -101,10 +101,28 @@ namespace ConferenceRoomApiTests.RepositoryTests
                 result = await repository.GetRoomByIdAsync(999);
             }
 
-            // Assert
+            //Assert
             Assert.Null(result);
         }
 
+        [Fact]
+        public async Task GetRoomsAsyncShouldReturnEmptyListWhenNoRoomsExist()
+        {
+            //Arrange
+            var options = GetInMemoryDbContextOptions("GetRooms_Empty");
+    
+            //Act
+            List<Room> result;
+            using (var context = new AppDbContext(options))
+            {
+                var repository = new RoomRepository(context, _mockLogger.Object);
+                result = await repository.GetRoomsAsync();
+            }
+
+            //Assert
+            Assert.Empty(result);
+        }
+        
         [Fact]
         public async Task CreateRoomAsyncShouldReturnAddRoomWithCorrectData()
         {
@@ -130,7 +148,7 @@ namespace ConferenceRoomApiTests.RepositoryTests
             Assert.NotNull(result);
             Assert.Equal(newRoom.Name, result.Name);
         }
-
+        
         [Fact]
         public async Task UpdateRoomAsyncShouldUpdateExistingRoomWhenValidData()
         {
